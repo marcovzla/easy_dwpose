@@ -76,8 +76,8 @@ class DWposeDetector:
         if not draw_pose:
             return pose
 
-        pose_image = draw_pose(pose, height=height, width=width, **kwargs)
-        pose_image = cv2.resize(pose_image, (original_width, original_height), cv2.INTER_LANCZOS4)
+        pose_image = draw_pose(pose, height=original_height, width=original_width, **kwargs)
+        # pose_image = cv2.resize(pose_image, (original_width, original_height), cv2.INTER_LANCZOS4)
 
         if output_type == "pil":
             pose_image = PIL.Image.fromarray(pose_image)
